@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{58EBACE2-C4AB-2819-8DE6-7196F9656DF5}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>cinder-vulkan</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\lib\msw\x64\</OutDir>
+    <IntDir>obj\x64\Debug\</IntDir>
+    <TargetName>cinder-vulkan-d</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\msw\x86\</OutDir>
+    <IntDir>obj\x86\Debug\</IntDir>
+    <TargetName>cinder-vulkan-d</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\lib\msw\x64\</OutDir>
+    <IntDir>obj\x64\Release\</IntDir>
+    <TargetName>cinder-vulkan</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\msw\x86\</OutDir>
+    <IntDir>obj\x86\Release\</IntDir>
+    <TargetName>cinder-vulkan</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\cinder\app\RendererVk.h" />
+    <ClInclude Include="..\include\cinder\vk\Allocator.h" />
+    <ClInclude Include="..\include\cinder\vk\BaseVkObject.h" />
+    <ClInclude Include="..\include\cinder\vk\Batch.h" />
+    <ClInclude Include="..\include\cinder\vk\Buffer.h" />
+    <ClInclude Include="..\include\cinder\vk\CommandBuffer.h" />
+    <ClInclude Include="..\include\cinder\vk\CommandPool.h" />
+    <ClInclude Include="..\include\cinder\vk\ConstantConversion.h" />
+    <ClInclude Include="..\include\cinder\vk\Context.h" />
+    <ClInclude Include="..\include\cinder\vk\Descriptor.h" />
+    <ClInclude Include="..\include\cinder\vk\Device.h" />
+    <ClInclude Include="..\include\cinder\vk\Environment.h" />
+    <ClInclude Include="..\include\cinder\vk\Framebuffer.h" />
+    <ClInclude Include="..\include\cinder\vk\Image.h" />
+    <ClInclude Include="..\include\cinder\vk\ImageView.h" />
+    <ClInclude Include="..\include\cinder\vk\IndexBuffer.h" />
+    <ClInclude Include="..\include\cinder\vk\ObjectTracker.h" />
+    <ClInclude Include="..\include\cinder\vk\Pipeline.h" />
+    <ClInclude Include="..\include\cinder\vk\PipelineSelector.h" />
+    <ClInclude Include="..\include\cinder\vk\Presenter.h" />
+    <ClInclude Include="..\include\cinder\vk\Queue.h" />
+    <ClInclude Include="..\include\cinder\vk\RenderPass.h" />
+    <ClInclude Include="..\include\cinder\vk\ShaderProg.h" />
+    <ClInclude Include="..\include\cinder\vk\StageManager.h" />
+    <ClInclude Include="..\include\cinder\vk\Surface.h" />
+    <ClInclude Include="..\include\cinder\vk\Swapchain.h" />
+    <ClInclude Include="..\include\cinder\vk\Texture.h" />
+    <ClInclude Include="..\include\cinder\vk\TextureFont.h" />
+    <ClInclude Include="..\include\cinder\vk\UniformBuffer.h" />
+    <ClInclude Include="..\include\cinder\vk\UniformLayout.h" />
+    <ClInclude Include="..\include\cinder\vk\Util.h" />
+    <ClInclude Include="..\include\cinder\vk\VertexBuffer.h" />
+    <ClInclude Include="..\include\cinder\vk\VertexBufferMesh.h" />
+    <ClInclude Include="..\include\cinder\vk\draw.h" />
+    <ClInclude Include="..\include\cinder\vk\func.h" />
+    <ClInclude Include="..\include\cinder\vk\gl_types.h" />
+    <ClInclude Include="..\include\cinder\vk\glsl_types.h" />
+    <ClInclude Include="..\include\cinder\vk\platform.h" />
+    <ClInclude Include="..\include\cinder\vk\scoped.h" />
+    <ClInclude Include="..\include\cinder\vk\vk.h" />
+    <ClInclude Include="..\include\cinder\vk\wrapper.h" />
+    <ClInclude Include="..\src\cinder\vk\spir2cross\GLSL.std.450.h" />
+    <ClInclude Include="..\src\cinder\vk\spir2cross\spir2common.hpp" />
+    <ClInclude Include="..\src\cinder\vk\spir2cross\spir2cpp.hpp" />
+    <ClInclude Include="..\src\cinder\vk\spir2cross\spir2cross.hpp" />
+    <ClInclude Include="..\src\cinder\vk\spir2cross\spir2glsl.hpp" />
+    <ClInclude Include="..\src\cinder\vk\spir2cross\spirv.hpp" />
+    <ClInclude Include="..\src\cinder\vk\util\farmhash.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\cinder\app\RendererVk.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Allocator.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Batch.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Buffer.cpp" />
+    <ClCompile Include="..\src\cinder\vk\CommandBuffer.cpp" />
+    <ClCompile Include="..\src\cinder\vk\CommandPool.cpp" />
+    <ClCompile Include="..\src\cinder\vk\ConstantConversion.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Context.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Descriptor.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Device.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Environment.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Framebuffer.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Image.cpp" />
+    <ClCompile Include="..\src\cinder\vk\ImageView.cpp" />
+    <ClCompile Include="..\src\cinder\vk\IndexBuffer.cpp" />
+    <ClCompile Include="..\src\cinder\vk\ObjectTracker.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Pipeline.cpp" />
+    <ClCompile Include="..\src\cinder\vk\PipelineSelector.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Presenter.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Queue.cpp" />
+    <ClCompile Include="..\src\cinder\vk\RenderPass.cpp" />
+    <ClCompile Include="..\src\cinder\vk\ShaderProg.cpp" />
+    <ClCompile Include="..\src\cinder\vk\StateManager.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Surface.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Swapchain.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Texture.cpp" />
+    <ClCompile Include="..\src\cinder\vk\TextureFont.cpp" />
+    <ClCompile Include="..\src\cinder\vk\UniformBuffer.cpp" />
+    <ClCompile Include="..\src\cinder\vk\UniformLayout.cpp" />
+    <ClCompile Include="..\src\cinder\vk\Util.cpp" />
+    <ClCompile Include="..\src\cinder\vk\VertexBuffer.cpp" />
+    <ClCompile Include="..\src\cinder\vk\VertexBufferMesh.cpp" />
+    <ClCompile Include="..\src\cinder\vk\draw.cpp" />
+    <ClCompile Include="..\src\cinder\vk\func.cpp" />
+    <ClCompile Include="..\src\cinder\vk\glsl_types.cpp" />
+    <ClCompile Include="..\src\cinder\vk\scoped.cpp" />
+    <ClCompile Include="..\src\cinder\vk\spir2cross\spir2cpp.cpp" />
+    <ClCompile Include="..\src\cinder\vk\spir2cross\spir2cross.cpp" />
+    <ClCompile Include="..\src\cinder\vk\spir2cross\spir2glsl.cpp" />
+    <ClCompile Include="..\src\cinder\vk\util\farmhash.cc" />
+    <ClCompile Include="..\src\cinder\vk\wrapper.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
