@@ -89,16 +89,17 @@ solution "cinder-vulkan"
 
         includedirs {
             "include",
+            "../../include",
             path.join(VULKAN_SDK, "include"),
             path.join(VULKAN_SDK, "glslang"),
-            "../../include",
         }
         
-        sysincludedirs {
-            "include",
-            path.join(VULKAN_SDK, "include"),
-            "../../include",
-        }
+        -- sysincludedirs {
+        --     "include",
+        --     path.join(VULKAN_SDK, "include"),
+        --     path.join(VULKAN_SDK, "glslang"),
+        --     "../../include",
+        -- }
         
         files {
             "include/**",

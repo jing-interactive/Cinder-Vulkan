@@ -70,28 +70,24 @@
     <IntDir>obj\x64\Debug\</IntDir>
     <TargetName>cinder-vulkan-d</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\lib\msw\x86\</OutDir>
     <IntDir>obj\x86\Debug\</IntDir>
     <TargetName>cinder-vulkan-d</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>..\lib\msw\x64\</OutDir>
     <IntDir>obj\x64\Release\</IntDir>
     <TargetName>cinder-vulkan</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\lib\msw\x86\</OutDir>
     <IntDir>obj\x86\Release\</IntDir>
     <TargetName>cinder-vulkan</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -99,7 +95,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -115,7 +111,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -131,7 +127,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -151,7 +147,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>

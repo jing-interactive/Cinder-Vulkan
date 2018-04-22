@@ -251,6 +251,7 @@ void RendererVk::setup( void* window, RendererRef sharedRenderer )
 #elif defined( CINDER_MSW )
 void RendererVk::setup(WindowImplMsw *windowImpl, RendererRef sharedRenderer )
 {
+    mWindowImpl = windowImpl;
 	::HINSTANCE hInst = ::GetModuleHandle( nullptr );
 
 	// Get window dimension

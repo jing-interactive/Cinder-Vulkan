@@ -229,16 +229,13 @@ void Environment::initInstanceLayers()
 
 void Environment::initInstance()
 {
-	const std::string appName = ci::app::AppBase::get()->getWindow()->getTitle();
-
-    VkApplicationInfo appInfo = {};
-    appInfo.sType				= VK_STRUCTURE_TYPE_APPLICATION_INFO;
+    VkApplicationInfo appInfo = { VK_STRUCTURE_TYPE_APPLICATION_INFO };
     appInfo.pNext				= nullptr;
-    appInfo.pApplicationName	= appName.c_str();
+    appInfo.pApplicationName	= "Cinder app";
     appInfo.applicationVersion	= 1;
-    appInfo.pEngineName			= appName.c_str();
+    appInfo.pEngineName			= "https://libcinder.org/";
     appInfo.engineVersion		= 1;
-    appInfo.apiVersion			= VK_MAKE_VERSION( 1, 0, 3 );
+    appInfo.apiVersion			= VK_API_VERSION_1_0;
 
 	std::vector<const char *> instanceLayerNames;
 	std::vector<const char *> instanceExtensionNames;
