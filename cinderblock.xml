@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+    <block
+	name="Cinder-Vulkan"
+	id="jing.vulkan"
+	author="Jing Interactive"
+	license="MIT"
+	summary="Development block for Cinder Vulkan renderer"
+	git="git://github.com/jing-interactive/Cinder-Vulkan.git"
+	version="0.1"
+    >
+
+    <headerPattern>include/*.h</headerPattern>
+    <includePath>include</includePath>
+    <includePath absolute="true">$(VULKAN_SDK)/include</includePath>
+    
+    <platform os="macosx">
+        <platform config="debug">
+            <staticLibrary>lib/macos/libvulkan-d.a</staticLibrary>
+            <staticLibrary>lib/macos/libcinder-vulkan-d.a</staticLibrary>
+        </platform>
+
+        <platform config="release">
+            <staticLibrary>lib/macos/libvulkan.a</staticLibrary>
+            <staticLibrary>lib/macos/libcinder-vulkan.a</staticLibrary>
+        </platform>
+    </platform>
+	<platform os="ios">
+        <platform config="debug">
+            <staticLibrary>lib/ios/libvulkan-d.a</staticLibrary>
+            <staticLibrary>lib/ios/libcinder-vulkan-d.a</staticLibrary>
+        </platform>
+
+        <platform config="release">
+            <staticLibrary>lib/ios/libvulkan.a</staticLibrary>
+            <staticLibrary>lib/ios/libcinder-vulkan.a</staticLibrary>
+        </platform>
+	</platform>
+    <platform os="msw">
+        <platform config="debug">
+            <staticLibrary absolute="true">$(VULKAN_SDK)/lib/vulkan-1.lib</staticLibrary>
+            <staticLibrary>lib/msw/$(PlatformTarget)/cinder-vulkan-d.lib</staticLibrary>
+        </platform>
+
+        <platform config="release">
+            <staticLibrary absolute="true">$(VULKAN_SDK)/lib/vulkan-1.lib</staticLibrary>
+            <staticLibrary>lib/msw/$(PlatformTarget)/cinder-vulkan.lib</staticLibrary>
+        </platform>
+    </platform>
+</block>
+<template>templates/BasicApp/template.xml</template>
+</cinder>
