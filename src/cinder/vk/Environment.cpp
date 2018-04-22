@@ -229,7 +229,7 @@ void Environment::initInstanceLayers()
 
 void Environment::initInstance()
 {
-	const std::string appName = ci::app::AppBase::get()->getName();
+	const std::string appName = ci::app::AppBase::get()->getWindow()->getTitle();
 
     VkApplicationInfo appInfo = {};
     appInfo.sType				= VK_STRUCTURE_TYPE_APPLICATION_INFO;

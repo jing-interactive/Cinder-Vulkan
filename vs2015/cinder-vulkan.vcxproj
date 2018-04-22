@@ -70,36 +70,36 @@
     <IntDir>obj\x64\Debug\</IntDir>
     <TargetName>cinder-vulkan-d</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\lib\msw\x86\</OutDir>
     <IntDir>obj\x86\Debug\</IntDir>
     <TargetName>cinder-vulkan-d</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>..\lib\msw\x64\</OutDir>
     <IntDir>obj\x64\Release\</IntDir>
     <TargetName>cinder-vulkan</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\lib\msw\x86\</OutDir>
     <IntDir>obj\x86\Release\</IntDir>
     <TargetName>cinder-vulkan</TargetName>
     <TargetExt>.lib</TargetExt>
-    <IncludePath>..\include;..\tools\vulkan\include;..\..\..\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\include;C:\VulkanSDK\1.1.70.1\include;..\..\..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -114,8 +114,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;DEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -130,8 +130,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -150,8 +150,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4244;4305;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\include;..\tools\vulkan\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;NOMINMAX;NDEBUG;AMD_EXTENSIONS;NV_EXTENSIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;C:\VulkanSDK\1.1.70.1\include;C:\VulkanSDK\1.1.70.1\glslang;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -214,6 +214,41 @@
     <ClInclude Include="..\src\cinder\vk\spir2cross\spir2glsl.hpp" />
     <ClInclude Include="..\src\cinder\vk\spir2cross\spirv.hpp" />
     <ClInclude Include="..\src\cinder\vk\util\farmhash.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\OGLCompilersDLL\InitializeDll.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\GLSL.ext.AMD.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\GLSL.ext.EXT.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\GLSL.ext.KHR.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\GLSL.ext.NV.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\GLSL.std.450.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\GlslangToSpv.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\Logger.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\SPVRemapper.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\SpvBuilder.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\bitutils.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\disassemble.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\doc.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\hex_float.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\spirv.hpp" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\spvIR.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Initialize.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\LiveTraverser.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\ParseHelper.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\RemoveTree.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Scan.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\ScanContext.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\SymbolTable.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Versions.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\attribute.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\gl_types.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\glslang_tab.cpp.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\iomapper.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\localintermediate.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\parseVersions.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\preprocessor\PpContext.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\preprocessor\PpTokens.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\propagateNoContraction.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\reflection.h" />
+    <ClInclude Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\public\ShaderLang.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\cinder\app\RendererVk.cpp" />
@@ -257,6 +292,49 @@
     <ClCompile Include="..\src\cinder\vk\spir2cross\spir2glsl.cpp" />
     <ClCompile Include="..\src\cinder\vk\util\farmhash.cc" />
     <ClCompile Include="..\src\cinder\vk\wrapper.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\OGLCompilersDLL\InitializeDll.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\GlslangToSpv.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\InReadableOrder.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\Logger.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\SPVRemapper.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\SpvBuilder.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\disassemble.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\doc.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\GenericCodeGen\CodeGen.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\GenericCodeGen\Link.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Constant.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\InfoSink.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Initialize.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\IntermTraverse.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Intermediate.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\ParseContextBase.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\ParseHelper.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\PoolAlloc.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\RemoveTree.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Scan.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\ShaderLang.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\SymbolTable.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\Versions.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\attribute.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\glslang_tab.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\intermOut.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\iomapper.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\limits.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\linkValidate.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\parseConst.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\preprocessor\Pp.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\preprocessor\PpAtom.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\preprocessor\PpContext.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\preprocessor\PpScanner.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\preprocessor\PpTokens.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\propagateNoContraction.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\reflection.cpp" />
+    <ClCompile Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\OSDependent\Windows\ossource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\VulkanSDK\1.1.70.1\glslang\OGLCompilersDLL\CMakeLists.txt" />
+    <None Include="C:\VulkanSDK\1.1.70.1\glslang\SPIRV\CMakeLists.txt" />
+    <None Include="C:\VulkanSDK\1.1.70.1\glslang\glslang\MachineIndependent\glslang.y" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

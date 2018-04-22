@@ -2,6 +2,8 @@
 
 local action = _ACTION or ""
 
+local VULKAN_SDK = os.getenv("VULKAN_SDK");
+
 solution "cinder-vulkan"
     location (action)
     configurations { "Debug", "Release" }
@@ -80,19 +82,31 @@ solution "cinder-vulkan"
     project "cinder-vulkan"
         kind "StaticLib"
 
+        defines {
+            "AMD_EXTENSIONS",
+            "NV_EXTENSIONS",
+        }
+
         includedirs {
             "include",
-            "tools/vulkan/include",
+            path.join(VULKAN_SDK, "include"),
+            path.join(VULKAN_SDK, "glslang"),
             "../../include",
         }
         
         sysincludedirs {
             "include",
-            "tools/vulkan/include",
+            path.join(VULKAN_SDK, "include"),
             "../../include",
         }
         
         files {
             "include/**",
             "src/**",
+            path.join(VULKAN_SDK, "glslang", "SPIRV/**"),
+            path.join(VULKAN_SDK, "glslang", "OGLCompilersDLL/**"),
+            path.join(VULKAN_SDK, "glslang/glslang", "public/**"),
+            path.join(VULKAN_SDK, "glslang/glslang", "GenericCodeGen/**"),
+            path.join(VULKAN_SDK, "glslang/glslang", "MachineIndependent/**"),
+            path.join(VULKAN_SDK, "glslang/glslang", "OSDependent/Windows/ossource.cpp"),
         }

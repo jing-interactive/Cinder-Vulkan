@@ -37,6 +37,8 @@
 */
 
 #include "cinder/app/RendererVk.h"
+#include "cinder/app/msw/AppImplMsw.h"
+
 #include "cinder/vk/CommandBuffer.h"
 #include "cinder/vk/ConstantConversion.h"
 #include "cinder/vk/Context.h"
@@ -152,7 +154,7 @@ RendererVk::RendererVk( const RendererVk &renderer )
 #elif defined( CINDER_LINUX )
 	mWindow = renderer.mWindow;
 #elif defined( CINDER_MSW )
-	mWnd = renderer.mWnd;
+    mWindowImpl = renderer.mWindowImpl;
 #endif
 }
 
@@ -164,7 +166,7 @@ void RendererVk::setupVulkan( const ivec2& windowSize, const vk::PlatformWindow&
 {
 	// Initialize environment
 	vk::Environment* env = vk::Environment::initializeVulkan( mOptions.mExplicitMode, mOptions.mInstanceLayers, mOptions.mDeviceLayers, mOptions.mDebugReportCallbackFn );	
-CI_LOG_I( "vk::Environment initialized" );
+    CI_LOG_I( "vk::Environment initialized" );
 
 	// Create device
 	const uint32_t gpuIndex = 0;
@@ -178,7 +180,7 @@ CI_LOG_I( "vk::Environment initialized" );
 	deviceOptions.setAllocatorBufferBlockSize( mOptions.mAllocatorBufferBlockSize );
 	deviceOptions.setAllocatorImageBlockSize( mOptions.mAllocatorImageBlockSize );
 	vk::DeviceRef device = vk::Device::create( gpu, deviceOptions, env );
-CI_LOG_I( "vk::Device initialized" );
+    CI_LOG_I( "vk::Device initialized" );
 
 	// Validate the requested sample count
 	const VkSampleCountFlags supportedSampleCounts = device->getGpuLimits().sampledImageColorSampleCounts;		
@@ -207,7 +209,7 @@ CI_LOG_I( "vk::Device initialized" );
 	mOptions.mSamples = VK_SAMPLE_COUNT_1_BIT;
 #endif	
 
-CI_LOG_I( "Using sample count: " << vk::toStringVkSampleCount( mOptions.mSamples ) );
+    CI_LOG_I( "Using sample count: " << vk::toStringVkSampleCount( mOptions.mSamples ) );
 
 	// Create presentable context
 	{
@@ -247,22 +249,20 @@ void RendererVk::setup( void* window, RendererRef sharedRenderer )
 	setupVulkan( windowSize, platformWindow );	
 }
 #elif defined( CINDER_MSW )
-void RendererVk::setup( HWND wnd, HDC dc, RendererRef sharedRenderer )
+void RendererVk::setup(WindowImplMsw *windowImpl, RendererRef sharedRenderer )
 {
 	::HINSTANCE hInst = ::GetModuleHandle( nullptr );
 
-	mWnd = wnd;
-
 	// Get window dimension
 	::RECT clientRect;
-	::GetClientRect( mWnd, &clientRect );
+	::GetClientRect(windowImpl->getHwnd(), &clientRect );
 	int width = clientRect.right - clientRect.left;
 	int height = clientRect.bottom - clientRect.top;
 	const ivec2 windowSize = ivec2( width, height );
 	
 	vk::PlatformWindow platformWindow = {};
 	platformWindow.connection = hInst;
-	platformWindow.window = mWnd;
+	platformWindow.window = windowImpl->getHwnd();
 	setupVulkan( windowSize, platformWindow );
 }
 
@@ -370,6 +370,16 @@ void RendererVk::swapBuffers()
 {
 }
 
+HWND RendererVk::getHwnd() const
+{
+    return mWindowImpl->getHwnd();
+}
+
+HDC RendererVk::getDc() const
+{
+    return mWindowImpl->getDc();
+}
+
 void RendererVk::defaultResize()
 {
 	makeCurrentContext();
@@ -383,7 +393,7 @@ void RendererVk::defaultResize()
 	glfwGetFramebufferSize( mWindow, &width, &height );	
 #elif defined( CINDER_MSW )
 	::RECT clientRect;
-	::GetClientRect( mWnd, &clientRect );
+	::GetClientRect(mWindowImpl->getHwnd(), &clientRect );
 	int width = clientRect.right - clientRect.left;
 	int height = clientRect.bottom - clientRect.top;
 #endif
