@@ -123,9 +123,6 @@
     <ClInclude Include="..\include\cinder\vk\IndexBuffer.h">
       <Filter>..\include\cinder\vk</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\cinder\vk\ObjectTracker.h">
-      <Filter>..\include\cinder\vk</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\cinder\vk\Pipeline.h">
       <Filter>..\include\cinder\vk</Filter>
     </ClInclude>
@@ -369,9 +366,6 @@
       <Filter>..\src\cinder\vk</Filter>
     </ClCompile>
     <ClCompile Include="..\src\cinder\vk\IndexBuffer.cpp">
-      <Filter>..\src\cinder\vk</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\cinder\vk\ObjectTracker.cpp">
       <Filter>..\src\cinder\vk</Filter>
     </ClCompile>
     <ClCompile Include="..\src\cinder\vk\Pipeline.cpp">
