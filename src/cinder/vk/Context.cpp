@@ -1274,7 +1274,6 @@ ShaderProgRef& Context::getStockShader( const vk::ShaderDef &shaderDef )
 	return existing->second;
 }
 
-/*
 void Context::addPendingUniformVars( const ci::vk::UniformBufferRef& buffer )
 {
 	auto it = std::find_if(
@@ -1322,7 +1321,6 @@ void Context::transferPendingUniformBuffer( const vk::CommandBufferRef& cmdBuf, 
 
 	mPendingUniformBuffers.clear();
 }
-*/
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Object tracking routines
