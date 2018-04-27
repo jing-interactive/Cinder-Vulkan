@@ -342,11 +342,6 @@ void Environment::destroy()
 		return;
 	}
 
-	// Devices
-	const bool removeTrackedObjects = false;
-	for( auto& device : mDevices ) {
-		device->destroy( removeTrackedObjects );
-	}
 	mDevices.clear();
 
 	// Instance

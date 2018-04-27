@@ -69,8 +69,6 @@ void CommandPool::initialize()
 
     VkResult res = vkCreateCommandPool( mContext->getDevice()->getDevice(), &createInfo, nullptr, &mCommandPool );
     assert( res == VK_SUCCESS );
-
-	mContext->trackedObjectCreated( this );
 }
 
 void CommandPool::destroy( bool removeFromTracking )
@@ -81,10 +79,6 @@ void CommandPool::destroy( bool removeFromTracking )
 
 	vkDestroyCommandPool(  mContext->getDevice()->getDevice(), mCommandPool, nullptr );
 	mCommandPool = VK_NULL_HANDLE;
-
-	if( removeFromTracking ) {
-		mContext->trackedObjectDestroyed( this );
-	}
 }
 
 CommandPoolRef CommandPool::create( uint32_t queueFamilyIndex, bool transient, vk::Context *context )

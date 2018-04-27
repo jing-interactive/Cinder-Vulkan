@@ -194,8 +194,6 @@ void Context::initialize( const Context* existingContext, VkQueueFlags queueType
 	mCachedColorAttachmentBlend.dstAlphaBlendFactor	= VK_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA;
 	mCachedColorAttachmentBlend.alphaBlendOp		= VK_BLEND_OP_ADD;
 	mCachedColorAttachmentBlend.colorWriteMask		= 0xf;
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void Context::destroy( bool removeFromTracking )
@@ -212,10 +210,6 @@ void Context::destroy( bool removeFromTracking )
 	mTrackedCommandPools.destroyAll( [&removeTrackedObjects]( vk::CommandPool *obj ) { obj->destroy( removeTrackedObjects ); } );
 	
 	mType = vk::Context::Type::UNDEFINED;
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 Context* Context::getCurrent()

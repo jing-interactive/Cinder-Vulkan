@@ -86,8 +86,6 @@ void DescriptorSetLayout::initialize( const std::vector<VkDescriptorSetLayoutBin
 
     VkResult res = vkCreateDescriptorSetLayout( mDevice->getDevice(), &createInfo, nullptr, &mDescriptorSetLayout );
     assert( VK_SUCCESS == res );
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void DescriptorSetLayout::destroy(bool removeFromTracking)
@@ -98,10 +96,6 @@ void DescriptorSetLayout::destroy(bool removeFromTracking)
 
 	vkDestroyDescriptorSetLayout( mDevice->getDevice(), mDescriptorSetLayout, nullptr );
 	mDescriptorSetLayout = VK_NULL_HANDLE;
-	
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 // ------------------------------------------------------------------------------------------------ 
@@ -230,8 +224,6 @@ void DescriptorPool::initialize( uint32_t maxSets, const std::vector<VkDescripto
 
 	VkResult res = vkCreateDescriptorPool( mDevice->getDevice(), &createInfo, nullptr, &mDescriptorPool );
 	assert(res == VK_SUCCESS);
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void DescriptorPool::destroy( bool removeFromTracking )
@@ -242,10 +234,6 @@ void DescriptorPool::destroy( bool removeFromTracking )
 
 	vkDestroyDescriptorPool( mDevice->getDevice(), mDescriptorPool, nullptr );
 	mDescriptorPool = VK_NULL_HANDLE;
-	
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 // ------------------------------------------------------------------------------------------------ 
@@ -294,8 +282,6 @@ void DescriptorSet::initialize( VkDescriptorSetLayout layout )
 
 	VkResult res = vkAllocateDescriptorSets( mDevice->getDevice(), &allocInfo, &mDescriptorSet );
 	assert( VK_SUCCESS == res );
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void DescriptorSet::destroy( bool removeFromTracking )
@@ -313,10 +299,6 @@ void DescriptorSet::destroy( bool removeFromTracking )
 	}
 	mDescriptorSet = VK_NULL_HANDLE;
 	mDescriptorPool = nullptr;
-	
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 /*

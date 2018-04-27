@@ -182,8 +182,6 @@ void CommandBuffer::initialize()
 
 	VkResult res = vkAllocateCommandBuffers( mContext->getDevice()->getDevice(), & allocInfo, &mCommandBuffer );
 	assert(res == VK_SUCCESS);
-
-	mContext->trackedObjectCreated( this );
 }
 
 void CommandBuffer::destroy( bool removeFromTracking )
@@ -196,10 +194,6 @@ void CommandBuffer::destroy( bool removeFromTracking )
 	vkFreeCommandBuffers( mContext->getDevice()->getDevice(), mCommandPool, 1, cmdBufs );
 	mCommandBuffer = VK_NULL_HANDLE;
 	mCommandPool = VK_NULL_HANDLE;
-
-	if( removeFromTracking ) {
-		mContext->trackedObjectDestroyed( this );
-	}
 }
 
 CommandBufferRef CommandBuffer::create( VkCommandPool commandPool, Context *context )

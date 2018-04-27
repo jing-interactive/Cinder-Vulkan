@@ -203,9 +203,6 @@ void Image::initialize()
 
 	// Set the current layout
 	mCurrentLayout = mFormat.mInitialLayout;
-
-	// Track this object
-	mDevice->trackedObjectCreated( this );
 }
 
 void Image::destroy( bool removeFromTracking )
@@ -232,10 +229,6 @@ void Image::destroy( bool removeFromTracking )
 */
 
 		mOwnsImage = false;
-	}
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
 	}
 }
 

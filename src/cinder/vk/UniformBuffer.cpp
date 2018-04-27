@@ -105,18 +105,12 @@ void UniformBuffer::initialize( const UniformLayout::Block& block )
 	auto dst = map();
 	std::memcpy( dst, static_cast<const void *>( mValues.data() ), mValues.size() );
 	unmap();
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void UniformBuffer::destroy( bool removeFromTracking )
 {
 	if( VK_NULL_HANDLE == mBuffer ) {
 		return;
-	}
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
 	}
 
 	Buffer::destroy( removeFromTracking );

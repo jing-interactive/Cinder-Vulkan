@@ -144,9 +144,7 @@ void Surface::initialize()
         assert( formatCount >= 1 );
         mFormat = surfFormats[0].format;
     }
-CI_LOG_I( "Surface format: " << toStringVkFormat( mFormat ) );
-
-	mDevice->trackedObjectCreated( this );
+    CI_LOG_I( "Surface format: " << toStringVkFormat( mFormat ) );
 }
 
 void Surface::destroy( bool removeFromTracking )
@@ -157,10 +155,6 @@ void Surface::destroy( bool removeFromTracking )
 
 	vkDestroySurfaceKHR( mDevice->getEnv()->getVulkanInstance(), mSurface, nullptr );
 	mSurface = VK_NULL_HANDLE;
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 SurfaceRef Surface::create( const vk::PlatformWindow& platformWindow, vk::Device *device )

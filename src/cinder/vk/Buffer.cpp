@@ -72,8 +72,6 @@ Buffer::~Buffer()
 void Buffer::initialize()
 {
 	createBufferAndAllocate( mSize );
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void Buffer::destroy( bool removeFromTracking )
@@ -84,10 +82,6 @@ void Buffer::destroy( bool removeFromTracking )
 
 	// Destroy
 	destroyBufferAndFree();
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 BufferRef Buffer::create( VkDeviceSize size, const vk::Buffer::Format& format, vk::Device *device )

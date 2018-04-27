@@ -209,64 +209,6 @@ private:
     PFN_vkGetSwapchainImagesKHR	fpGetSwapchainImagesKHR = nullptr;
     PFN_vkAcquireNextImageKHR	fpAcquireNextImageKHR = nullptr;
     PFN_vkQueuePresentKHR		fpQueuePresentKHR = nullptr;
-
-private:
-	vk::util::TrackedObject<vk::Image>					mTrackedImages;
-	vk::util::TrackedObject<vk::ImageView>				mTrackedImageViews;
-	vk::util::TrackedObject<vk::Buffer>					mTrackedBuffers;
-	vk::util::TrackedObject<vk::UniformBuffer>			mTrackedUniformBuffers;
-	vk::util::TrackedObject<vk::IndexBuffer>			mTrackedIndexBuffers;
-	vk::util::TrackedObject<vk::VertexBuffer>			mTrackedVertexBuffers;
-	vk::util::TrackedObject<vk::Framebuffer>			mTrackedFramebuffers;
-	vk::util::TrackedObject<vk::RenderPass>				mTrackedRenderPasses;
-	vk::util::TrackedObject<vk::PipelineLayout>			mTrackedPipelineLayouts;
-	vk::util::TrackedObject<vk::PipelineCache>			mTrackedPipelineCaches;
-	vk::util::TrackedObject<vk::Pipeline>				mTrackedPipelines;
-	vk::util::TrackedObject<vk::DescriptorSetLayout>	mTrackedDescriptorSetLayouts;
-	vk::util::TrackedObject<vk::DescriptorPool>			mTrackedDescriptorPools;
-	vk::util::TrackedObject<vk::DescriptorSet>			mTrackedDescriptorSets;
-	vk::util::TrackedObject<vk::ShaderProg>				mTrackedShaderProgs;
-	vk::util::TrackedObject<vk::Swapchain>				mTrackedSwapchains;
-	vk::util::TrackedObject<vk::Surface>				mTrackedSurfaces;
-	vk::util::TrackedObject<vk::Context>				mTrackedContexts;
-
-public:
-	void trackedObjectCreated(   vk::Image *obj );
-	void trackedObjectDestroyed( vk::Image *obj );
-	void trackedObjectCreated(   vk::ImageView *obj );
-	void trackedObjectDestroyed( vk::ImageView *obj );
-	void trackedObjectCreated(   vk::Buffer *obj );
-	void trackedObjectDestroyed( vk::Buffer *obj );
-	void trackedObjectCreated(   vk::UniformBuffer *obj );
-	void trackedObjectDestroyed( vk::UniformBuffer *obj );
-	void trackedObjectCreated(   vk::IndexBuffer *obj );
-	void trackedObjectDestroyed( vk::IndexBuffer *obj );
-	void trackedObjectCreated(   vk::VertexBuffer *obj );
-	void trackedObjectDestroyed( vk::VertexBuffer *obj );
-	void trackedObjectCreated(   vk::Framebuffer *obj );
-	void trackedObjectDestroyed( vk::Framebuffer *obj );
-	void trackedObjectCreated(   vk::RenderPass *obj );
-	void trackedObjectDestroyed( vk::RenderPass *obj );
-	void trackedObjectCreated(   vk::PipelineLayout *obj );
-	void trackedObjectDestroyed( vk::PipelineLayout *obj );
-	void trackedObjectCreated(   vk::PipelineCache *obj );
-	void trackedObjectDestroyed( vk::PipelineCache *obj );
-	void trackedObjectCreated(   vk::Pipeline *obj );
-	void trackedObjectDestroyed( vk::Pipeline *obj );
-	void trackedObjectCreated(   vk::DescriptorSetLayout *obj );
-	void trackedObjectDestroyed( vk::DescriptorSetLayout *obj );
-	void trackedObjectCreated(   vk::DescriptorPool *obj );
-	void trackedObjectDestroyed( vk::DescriptorPool *obj );
-	void trackedObjectCreated(   vk::DescriptorSet *obj );
-	void trackedObjectDestroyed( vk::DescriptorSet *obj );
-	void trackedObjectCreated(   vk::ShaderProg *obj );
-	void trackedObjectDestroyed( vk::ShaderProg *obj );
-	void trackedObjectCreated(   vk::Swapchain *obj );
-	void trackedObjectDestroyed( vk::Swapchain *obj );
-	void trackedObjectCreated(   vk::Surface *obj );
-	void trackedObjectDestroyed( vk::Surface *obj );
-	void trackedObjectCreated(   vk::Context *obj );
-	void trackedObjectDestroyed( vk::Context *obj );
 };
 
 }} // namespace cinder::vk

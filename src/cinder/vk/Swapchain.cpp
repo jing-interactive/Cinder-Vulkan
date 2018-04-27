@@ -195,8 +195,6 @@ void Swapchain::initialize()
 	if( VK_FORMAT_UNDEFINED != mOptions.mDepthStencilFormat ) {
 		initializeDepthStencilBuffers();
 	}
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void Swapchain::destroy( bool removeFromTracking )
@@ -207,10 +205,6 @@ void Swapchain::destroy( bool removeFromTracking )
 
 	mDevice->DestroySwapchainKHR( mDevice->getDevice(), mSwapchain, nullptr );
 	mSwapchain = VK_NULL_HANDLE;
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 SwapchainRef Swapchain::create( const ivec2& size,  uint32_t imageCount, const vk::SurfaceRef& surface, const Swapchain::Options& options, vk::Device *device )

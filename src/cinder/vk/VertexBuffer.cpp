@@ -65,18 +65,12 @@ void VertexBuffer::initialize( const void* data, size_t dataSize )
 		unmap();
 	}
 */
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void VertexBuffer::destroy( bool removeFromTracking )
 {
 	if( VK_NULL_HANDLE == mBuffer ) {
 		return;
-	}
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
 	}
 
 	Buffer::destroy( removeFromTracking );

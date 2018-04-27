@@ -1050,8 +1050,6 @@ void ShaderProg::initialize( const ShaderProg::Format &format )
 		mCachedPushConstantRanges.push_back( range );
 		mCachedNamedPushConstantRanges[pushConstant.getName()] = range;
 	}	
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void ShaderProg::destroy( bool removeFromTracking )
@@ -1065,10 +1063,6 @@ void ShaderProg::destroy( bool removeFromTracking )
 		shaderStage.module = VK_NULL_HANDLE;
 	}
 	mPipelineShaderStages.clear();
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 ShaderProgRef ShaderProg::create( const ShaderProg::Format &format, vk::Device *device )

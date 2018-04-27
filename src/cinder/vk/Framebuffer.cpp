@@ -174,7 +174,6 @@ void Framebuffer::initialize( const vk::Framebuffer::Format& format )
 	assert( res == VK_SUCCESS );
 */
 
-	mDevice->trackedObjectCreated( this );
 }
 
 void Framebuffer::destroy( bool removeFromTracking )
@@ -185,10 +184,6 @@ void Framebuffer::destroy( bool removeFromTracking )
 
 	vkDestroyFramebuffer( mDevice->getDevice(), mFramebuffer, nullptr );
 	mFramebuffer = VK_NULL_HANDLE;
-	
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 FramebufferRef Framebuffer::create( VkRenderPass renderPass, const ivec2& size, const vk::Framebuffer::Format& format, vk::Device *device )

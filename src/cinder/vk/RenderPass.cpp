@@ -376,8 +376,6 @@ void RenderPass::initialize( const RenderPass::Options& options )
 	renderPassCreateInfo.pDependencies 		= dependencies.empty() ? nullptr : dependencies.data();;
 	VkResult res = vkCreateRenderPass( mDevice->getDevice(), &renderPassCreateInfo, nullptr, &mRenderPass );
     assert( res == VK_SUCCESS );
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void RenderPass::destroy( bool removeFromTracking )
@@ -388,10 +386,6 @@ void RenderPass::destroy( bool removeFromTracking )
 	
 	vkDestroyRenderPass( mDevice->getDevice(), mRenderPass, nullptr );
 	mRenderPass = VK_NULL_HANDLE;
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
-	}
 }
 
 RenderPassRef RenderPass::create( const RenderPass::Options& options, vk::Device *device )

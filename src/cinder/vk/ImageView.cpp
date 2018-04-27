@@ -116,10 +116,6 @@ void ImageView::initialize( VkImageViewType viewType, VkImageType imageType, int
 
 	VkResult res = vkCreateImageView( mDevice->getDevice(), &imageViewCreateInfo, nullptr, &mImageView );
 	assert(res == VK_SUCCESS);
-
-	if( mSelfOwned ) {
-		mDevice->trackedObjectCreated( this );
-	}
 }
 
 void ImageView::initialize( VkImageViewType viewType, VkImageType imageType, int32_t width, int32_t height, int32_t depth, const Image::Format& imageOptions, const vk::ImageRef& premadeImage )
@@ -158,10 +154,6 @@ void ImageView::initialize( VkImageViewType viewType, VkImageType imageType, int
 
 	VkResult res = vkCreateImageView( mDevice->getDevice(), &imageViewCreateInfo, nullptr, &mImageView );
 	assert(res == VK_SUCCESS);
-
-	if( mSelfOwned ) {
-		mDevice->trackedObjectCreated( this );
-	}
 }
 
 void ImageView::destroy( bool removeFromTracking )
@@ -176,10 +168,6 @@ void ImageView::destroy( bool removeFromTracking )
 	if( mImage ) {
 		mImage->~Image();
 		mImage.reset();
-	}
-
-	if( removeFromTracking && mSelfOwned ) {
-		mDevice->trackedObjectDestroyed( this );
 	}
 }
 

@@ -88,18 +88,12 @@ void IndexBuffer::initialize( size_t numIndices, VkIndexType indexType, const vo
 		mIndexType = indexType;
 	}
 */
-
-	mDevice->trackedObjectCreated( this );
 }
 
 void IndexBuffer::destroy( bool removeFromTracking )
 {
 	if( VK_NULL_HANDLE == mBuffer ) {
 		return;
-	}
-
-	if( removeFromTracking ) {
-		mDevice->trackedObjectDestroyed( this );
 	}
 
 	Buffer::destroy( removeFromTracking );
